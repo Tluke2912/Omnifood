@@ -1,0 +1,367 @@
+:root {
+  --main-prim-clr: #cf6d17;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  background-color: #fff;
+  color: #555;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* ======================== */
+/* Reusable Components */
+/* ======================== */
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+section {
+  padding: 80px 0;
+}
+.box {
+  padding: 1%;
+}
+/* ======================== */
+/* Paragraphs */
+/* ======================== */
+/* width 70% + margin to one side of 15% centers the paragraph */
+.long-copy {
+  line-height: 145%;
+  width: 70%;
+  margin-left: 15%;
+}
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+}
+/* ======================== */
+/* Icons */
+/* ======================== */
+.icon-big {
+  font-size: 300%;
+  display: block;
+  color: var(--main-prim-clr);
+}
+.city-icon {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color: var(--main-prim-clr);
+  font-size: 120%;
+  line-height: 120%;
+  margin: -5px 5px 0 0;
+}
+/* ======================== */
+/* Headings */
+/* ======================== */
+/* Font-size200% per responsive guidelines (double 20) */
+/* font-weight 300 to unbold, letter spacing per responsive guidelines */
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 200%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+}
+h2 {
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+/* for :after, need to use content */
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: var(--main-prim-clr);
+  content: "";
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+/* ======================== */
+/* BUTTONS */
+/* ======================== */
+
+/* border radius 200px to make radius bigger */
+/* transition to add delay to color transforms,  */
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 200px;
+  transition: background-color 0.5s, border 0.5s, color 0.2s;
+}
+/* margin-right adds margin between the two buttons */
+.btn-full:link,
+.btn-full:visited {
+  background-color: #e67e22;
+  color: #fff;
+  border: 1px solid #e67e22;
+  color: #fff;
+  margin-right: 10px;
+}
+.btn-ghost:link,
+.btn-ghost:visited {
+  border: 1px solid #e67e22;
+  color: #e67e22;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #cf6d17;
+}
+.btn-full:hover,
+.btn-full:active {
+  border: 1px solid #cf6d17;
+}
+.btn-ghost:hover,
+.btn-ghost:active {
+  border: 1px solid #cf6d17;
+  color: #fff;
+}
+/* ============ */
+/* Generic Links */
+/* ============ */
+a,
+a:link,
+a:active {
+  color: var(--main-prim-clr);
+  text-decoration: none;
+  border-bottom: 1px solid var(--main-prim-clr);
+  padding-bottom: 1px;
+  transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+  color: #555;
+  border: transparent;
+}
+/* ============ */
+/* Header */
+/* ============ */
+/* insert img and format box */
+/* gradient darkens color of picture */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../css/img/hero.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Absolute position to vertical & horizontal position */
+/* transform translate moves oddly positioned background img up 50% and to the left 50% */
+.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* float: left moves the list to the left of the navbar div */
+/* margin-top moves the logo down 20 pixels */
+.logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+/* list style removes the bullets */
+/* float: right moves the list to the right of the navbar div */
+/* margin-top moves the links down 20px */
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 40px;
+}
+/* inline block on these list elements under the main-nav class  */
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+/* text-decoration takes the underlining away from the anchor elements */
+/* determined font-size by taking the desired font size of 18px and dividing by the current px size in header (20)  */
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 8px 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  font-weight: 550;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid var(--main-prim-clr);
+}
+
+/* ============ */
+/* Features */
+/* ============ */
+.section-features .long-copy {
+  margin-bottom: 30px;
+}
+/* ============ */
+/* End features */
+/* ============ */
+/* ============ */
+/* Meals */
+/* ============ */
+.section-meals {
+  padding: 0;
+}
+.meals-showcase {
+  list-style: none;
+  width: 100%;
+}
+/* float left here makes the images wrap? */
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+/* overflow hides the extra part of the img that overflows the page */
+.meal-photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+}
+/* Transform to make img slightly bigger  */
+.meal-photo img {
+  width: 100%;
+  height: auto;
+  transform: scale(1.15);
+  opacity: 0.7;
+}
+/* transform to shrink on hover, transition: transform to slow transition   */
+.meal-photo img:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s;
+}
+/* ============
+Works
+=============== */
+.section-steps {
+  background-color: rgb(238, 237, 237);
+}
+.steps-box:first-child {
+  text-align: right;
+  padding-right: 3%;
+  margin-top: 30px;
+}
+.steps-box:last-child {
+  text-align: left;
+  padding-left: 3%;
+  margin-top: 70px;
+}
+.app-screen {
+  width: 40%;
+}
+
+.works-step {
+  margin-bottom: 50px;
+}
+.works-step:last-of-type {
+  margin-bottom: 80px;
+}
+.works-step div {
+  color: var(--main-prim-clr);
+  border: 2px solid #e67e22;
+  display: inline-block;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  padding: 5px;
+  float: left;
+  font-size: 150%;
+  margin-left: 25px;
+}
+.btn-app:link,
+.btn-app:active {
+  border: 0;
+}
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+/* ============
+Cities
+=============== */
+
+.box img {
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.city-feature {
+  align-items: baseline;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+/* ============
+testimonials
+=============== */
+.section-testimonials {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../css/img/back-customers.jpg);
+  background-size: cover;
+  color: #fff;
+  background-attachment: fixed;
+}
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  line-height: 145%;
+}
+cite {
+  font-size: 90%;
+  margin-top: 25px;
+  display: block;
+}
+cite img {
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
