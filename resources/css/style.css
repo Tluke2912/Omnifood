@@ -238,12 +238,11 @@ header {
 .section-features .long-copy {
   margin-bottom: 30px;
 }
-/* ============ */
-/* End features */
-/* ============ */
+
 /* ============ */
 /* Meals */
 /* ============ */
+
 .section-meals {
   padding: 0;
 }
@@ -276,9 +275,11 @@ header {
   transform: scale(1.05);
   transition: transform 0.5s;
 }
+
 /* ============
 Works
 =============== */
+
 .section-steps {
   background-color: rgb(238, 237, 237);
 }
@@ -311,7 +312,6 @@ Works
   width: 55px;
   text-align: center;
   padding: 5px;
-  float: left;
   font-size: 150%;
   margin-left: 25px;
 }
@@ -324,6 +324,7 @@ Works
   width: auto;
   margin-right: 10px;
 }
+
 /* ============
 Cities
 =============== */
@@ -350,10 +351,21 @@ testimonials
   color: #fff;
   background-attachment: fixed;
 }
+/* need relative to show the absolute positioning */
 blockquote {
   padding: 2%;
   font-style: italic;
   line-height: 145%;
+  position: relative;
+  margin-top: 40px;
+}
+blockquote:before {
+  display: block;
+  content: "\201C";
+  font-size: 500%;
+  position: absolute;
+  top: -5px;
+  left: -5px;
 }
 cite {
   font-size: 90%;
@@ -361,7 +373,54 @@ cite {
   display: block;
 }
 cite img {
-  height: 3rem;
+  height: 45px;
   border-radius: 50%;
   margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* ============
+section-plans
+=============== */
+.section-plans {
+  background-color: #f4f4f4;
+}
+.plan-box {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: 0 2px 2px rgb(238, 238, 238);
+}
+.plan-box div {
+  padding: 1rem;
+  border: 1px solid rgba(230, 229, 229, 0.472);
+}
+.plan-box div:first-child {
+  background-color: rgb(245, 238, 238);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.plan-box div:last-child {
+  text-align: center;
+  border: none;
+}
+.plan-price {
+  font-size: 300%;
+  margin-bottom: 10px;
+  font-weight: 300%;
+  color: var(--main-prim-clr);
+}
+.plan-price span {
+  font-size: 30%;
+  font-weight: 300;
+}
+.plan-price-meal {
+  font-size: 80%;
+}
+.plan-box ul {
+  list-style: none;
+}
+.plan-box ul li {
+  padding: 5px 0;
 }
